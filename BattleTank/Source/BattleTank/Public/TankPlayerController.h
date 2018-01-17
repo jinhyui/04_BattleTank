@@ -25,6 +25,8 @@ public:
 	void AimTowardsCrosshair();
 
 	bool GetSightRayHitLocation(FVector& HitLocation);
+
+	bool GetLookDirection(FVector2D& ScreenLocation, FVector& WorldDirection);
 private:
 	UPROPERTY(EditAnywhere)
 	float CrossHairXLocation=0.5;
