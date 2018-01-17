@@ -21,3 +21,19 @@ void ATankPlayerController::BeginPlay()
 		UE_LOG(LogTemp, Warning, TEXT("PlayerController possesing : %s"), *(ControlledTank->GetName()));
 	}
 }
+
+// Called every frame
+void ATankPlayerController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	AimTowardsCrosshair();
+}
+
+void ATankPlayerController::AimTowardsCrosshair()
+{
+	if (!GetControlledTank()) return;
+
+	// Get world location if linetrace through crosshair
+	// If it hits the landscape
+		// Tell controlled tank to aim at this point
+}
