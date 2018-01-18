@@ -3,6 +3,16 @@
 
 #include "Tank.h"
 
+
+// Set defalt value
+ATank::ATank()
+{
+	PrimaryActorTick.bCanEverTick = true;
+
+	// No need to protect points as added at construction
+	TankAimingComponent = CreateDefaultSubobject<UTankAimingComponent>(FName("Aiming Component"));
+}
+
 // Called when the game starts or when spawned
 void ATank::BeginPlay()
 {
@@ -26,6 +36,5 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void ATank::AimAt(FVector HitLocation)
 {
-	auto OurTankName = GetName();
-	UE_LOG(LogTemp, Warning, TEXT("%s is aim at %s"), *OurTankName, *HitLocation.ToString());
+	TankAimingComponent->AimAt(HitLocation);
 }
