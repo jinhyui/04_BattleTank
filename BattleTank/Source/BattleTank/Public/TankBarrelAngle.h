@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include <Engine/World.h>
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
 #include "TankBarrelAngle.generated.h"
@@ -15,7 +16,7 @@ class BATTLETANK_API UTankBarrelAngle : public USceneComponent
 	GENERATED_BODY()
 
 public:
-	void Elevate(float DegreesPerSecond);
+	void Elevate(float RelativeSpeed);
 
 private:
 	UPROPERTY(EditAnywhere, Category = Setup)
