@@ -38,6 +38,5 @@ private:
 	float CrossHairYLocation=0.33333;
 
 	float LineTraceRange = 1000000;
-
 };
 

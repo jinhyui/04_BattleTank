@@ -17,7 +17,7 @@ public:
 	ATank();
 	void AimAt(FVector HitLocation);
 	UFUNCTION(BlueprintCallable, Category = Setup)
-	void SetBarrelRefference(UTankBarrel1 * BarrelToSet);
+	void SetBarrelRefference(UTankBarrel1 * BarrelToSet, UTankBarrelAngle * AngleToSet);
 
 protected:
 	// Called when the game starts or when spawned

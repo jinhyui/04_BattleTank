@@ -4,6 +4,7 @@
 #include <Kismet/GameplayStatics.h>
 #include <Engine/World.h>
 #include "TankBarrel1.h"
+#include "TankBarrelAngle.h"
 
 // Sets default values for this component's properties
 UTankAimingComponent::UTankAimingComponent()
@@ -15,16 +16,17 @@ UTankAimingComponent::UTankAimingComponent()
 	// ...
 }
 
-void UTankAimingComponent::SetBarrelRefference(UTankBarrel1 * BarrelToSet)
+void UTankAimingComponent::SetBarrelRefference(UTankBarrel1 * BarrelToSet, UTankBarrelAngle * AngleToSet)
 {
 	Barrel1 = BarrelToSet;
+	BarrelAngle = AngleToSet;
 }
 
 
 
 void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 {
-	if (!Barrel1) {
+	if (!BarrelAngle||!Barrel1) {
 		return;
 	}
 
@@ -50,10 +52,10 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 {
 	// Work-out difference between current barrel rotation, and AimDireciton
-	auto BarrelRotator = Barrel1->GetForwardVector().Rotation();
+	auto BarrelRotator = BarrelAngle->GetForwardVector().Rotation();
 	auto AimAsRotator = AimDirection.Rotation();
 	auto DeltaRotator = AimAsRotator - BarrelRotator;
 	UE_LOG(LogTemp, Warning, TEXT("AimAsRotator : %s"), *AimAsRotator.ToString());
 
-	Barrel1->Elevate(5); // TODO remove magis number
+	BarrelAngle->Elevate(5); // TODO remove magis number
 }
