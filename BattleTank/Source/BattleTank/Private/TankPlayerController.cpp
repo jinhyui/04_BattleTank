@@ -2,6 +2,8 @@
 
 #include "TankPlayerController.h"
 #include <Engine/World.h>
+#include "Tank.h"
+
 
 ATank* ATankPlayerController::GetControlledTank() const
 {
@@ -39,7 +41,6 @@ void ATankPlayerController::AimTowardsCrosshair()
 	{
 		GetControlledTank()->AimAt(HitLocation);
 	}
-
 }
 
 bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation)
