@@ -13,11 +13,15 @@ ATank::ATank()
 	TankAimingComponent = CreateDefaultSubobject<UTankAimingComponent>(FName("Aiming Component"));
 }
 
-void ATank::SetBarrelRefference(UTankBarrel1 * BarrelToSet, UTankBarrelAngle * AngleToSet, UTankTurret * TankTurret)
+void ATank::SetBarrelRefference(UTankBarrel1 * BarrelToSet, UTankBarrelAngle * AngleToSet)
 {
 	TankAimingComponent->SetBarrelRefference(BarrelToSet, AngleToSet);
 }
 
+void ATank::SetTurretRefference(UTankTurret * TankTurret)
+{
+	TankAimingComponent->SetTurretRefference(TankTurret);
+}
 
 // Called when the game starts or when spawned
 void ATank::BeginPlay()

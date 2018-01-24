@@ -18,7 +18,9 @@ public:
 	ATank();
 	void AimAt(FVector HitLocation);
 	UFUNCTION(BlueprintCallable, Category = Setup)
-	void SetBarrelRefference(UTankBarrel1 * BarrelToSet, UTankBarrelAngle * AngleToSet, UTankTurret * TankTurret);
+	void SetBarrelRefference(UTankBarrel1 * BarrelToSet, UTankBarrelAngle * AngleToSet);
+	UFUNCTION(BlueprintCallable, Category = Setup)
+	void SetTurretRefference(UTankTurret * TankTurret);
 
 protected:
 	// Called when the game starts or when spawned

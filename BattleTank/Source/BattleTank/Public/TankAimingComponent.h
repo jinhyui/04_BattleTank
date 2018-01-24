@@ -23,6 +23,8 @@ public:
 
 	void SetBarrelRefference(UTankBarrel1 * BarrelToSet, UTankBarrelAngle * AngleToSet);
 
+	void SetTurretRefference(UTankTurret * TurretToSet);
+
 	void AimAt(FVector HitLocation, float LaunchSpeed);
 
 	void MoveBarrelTowards(FVector AimDirection);
