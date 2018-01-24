@@ -14,5 +14,4 @@ UCLASS( meta = (BlueprintSpawnableComponent), hidecategories = ("Collision"))
 class BATTLETANK_API UTankBarrel1 : public UStaticMeshComponent
 {
 	GENERATED_BODY()
-
 };

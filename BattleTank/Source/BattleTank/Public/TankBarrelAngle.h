@@ -2,7 +2,6 @@
 
 #pragma once
 
-#include <Engine/World.h>
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
 #include "TankBarrelAngle.generated.h"
@@ -20,14 +19,13 @@ public:
 
 private:
 	UPROPERTY(EditAnywhere, Category = Setup)
-		float MaxDegreePerSecond = 20; // Sensible defalt
+	float MaxDegreePerSecond = 5;
 
 	UPROPERTY(EditAnywhere, Category = Setup)
-		float MaxElevationDegree = 40; // Sensible defalt
+	float MaxElevationDegree = 40;
 
 	UPROPERTY(EditAnywhere, Category = Setup)
-		float MinElevationDegree = 0; // Sensible defalt
-
+	float MinElevationDegree = 0; 
 
 	
 	
