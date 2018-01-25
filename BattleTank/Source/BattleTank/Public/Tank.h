@@ -16,11 +16,17 @@ class BATTLETANK_API ATank : public APawn
 	GENERATED_BODY()
 public:
 	ATank();
+
 	void AimAt(FVector HitLocation);
+
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetBarrelRefference(UTankBarrel1 * BarrelToSet, UTankBarrelAngle * AngleToSet);
+
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetTurretRefference(UTankTurret * TankTurret);
+
+	UFUNCTION(BlueprintCallable, Category = Setup)
+	void Fire();
 
 protected:
 	// Called when the game starts or when spawned
@@ -34,7 +40,7 @@ public:
 
 public:
 	UPROPERTY(EditAnywhere, Category = Firing)
-	float LaunchSpeed = 4000;
+	float LaunchSpeed = 40000;
 
 	
 };
