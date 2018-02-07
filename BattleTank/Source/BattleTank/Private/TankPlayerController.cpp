@@ -4,7 +4,6 @@
 #include <Engine/World.h>
 #include "Tank.h"
 
-
 ATank* ATankPlayerController::GetControlledTank() const
 {
 	return Cast<ATank>(GetPawn());
@@ -43,7 +42,7 @@ void ATankPlayerController::AimTowardsCrosshair()
 	}
 }
 
-bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation)
+bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const
 {
 	int32 ViewportSizeX, ViewportSizeY;
 	GetViewportSize(ViewportSizeX, ViewportSizeY);
@@ -57,13 +56,13 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation)
 	return true;
 }
 
-bool ATankPlayerController::GetLookDirection(FVector2D& ScreenLocation, FVector& LookDirection)
+bool ATankPlayerController::GetLookDirection(FVector2D& ScreenLocation, FVector& LookDirection) const
 {
 	FVector WorldLocation;
 	return (DeprojectScreenPositionToWorld(ScreenLocation.X, ScreenLocation.Y, WorldLocation, LookDirection));
 }
 
-bool ATankPlayerController::GetLookVectorHitLocation(FVector& LookDirection, FVector& HitLocation)
+bool ATankPlayerController::GetLookVectorHitLocation(FVector& LookDirection, FVector& HitLocation) const
 {
 	FHitResult Hit;
 	FVector StartLocation = PlayerCameraManager->GetCameraLocation(); //GetWorld()->GetFirstPlayerController()->GetPawn()->GetTargetLocation();

@@ -22,11 +22,11 @@ public:
 
 	void AimTowardsCrosshair();
 
-	bool GetSightRayHitLocation(FVector& HitLocation);
+	bool GetSightRayHitLocation(FVector& HitLocation) const;
 
-	bool GetLookDirection(FVector2D& ScreenLocation, FVector& WorldDirection);
+	bool GetLookDirection(FVector2D& ScreenLocation, FVector& WorldDirection) const;
 
-	bool GetLookVectorHitLocation(FVector& LookDirection, FVector& HitLocation);
+	bool GetLookVectorHitLocation(FVector& LookDirection, FVector& HitLocation) const;
 
 private:
 	UPROPERTY(EditAnywhere)

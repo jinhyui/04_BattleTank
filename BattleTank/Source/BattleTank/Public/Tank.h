@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "Tank.generated.h"
-#include "MovementComponent.h"
 
 class UTankBarrel1;
 class UTankAimingComponent;
@@ -35,7 +34,6 @@ protected:
 	virtual void BeginPlay() override;
 
 	UTankAimingComponent* TankAimingComponent = nullptr;
-	UMovementComponent * ProjectileMovementComponente = nullptr;
 
 public:	
 	// Called to bind functionality to input
@@ -43,7 +41,7 @@ public:
 
 private:
 	UPROPERTY(EditAnywhere, Category = Firing)
-	float LaunchSpeed = 40000;
+	float LaunchSpeed = 10000;
 
 	UPROPERTY(EditAnywhere, Category = Setup)
 	TSubclassOf<AProjectile> ProjectileBluprinter;
