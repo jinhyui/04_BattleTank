@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include <Engine/World.h>
 #include "Projectile.h"
+#include <Engine/World.h>
 
 // Sets default values
 AProjectile::AProjectile()
@@ -28,8 +28,6 @@ void AProjectile::Tick(float DeltaTime)
 
 void AProjectile::LaunchProjectile(float Speed)
 {
-	auto time = GetWorld()->GetTimeSeconds();
-	UE_LOG(LogTemp,Warning,TEXT("%f: Projectile fires at %f"),time, Speed);
 	ProjectileMovement->SetVelocityInLocalSpace(FVector::ForwardVector * Speed);
 	ProjectileMovement->Activate();
 }
