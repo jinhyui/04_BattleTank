@@ -15,7 +15,7 @@ void ATankAIController::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	{
 		AITank = Cast<ATank>(GetPawn());
-		// TODO Move towards the player
+		// TODO Move towards the player 
 		PlayerTank = Cast<ATank>(GetWorld()->GetFirstPlayerController()->GetPawn());
 
 		if (AITank&&PlayerTank)
