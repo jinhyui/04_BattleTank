@@ -3,6 +3,7 @@
 
 #include "Tank.h"
 #include "TankAimingComponent.h"
+#include "TankMovementComponent.h"
 #include <Engine/World.h>
 #include "TankBarrel1.h"
 #include "Projectile.h"
@@ -50,7 +51,7 @@ void ATank::Fire()
 {
 	bool isReloaded = (FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds;
 	
-	if (Barrel&&isReloaded)
+	if (Barrel&&isReloaded&&ProjectileBluprinter)
 	{
 		auto Projectile = GetWorld()->SpawnActor<AProjectile>(
 			ProjectileBluprinter,
